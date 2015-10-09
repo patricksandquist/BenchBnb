@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Bench.create!(description: 'Golden Gate Park', lat: 37.4611, lng: 122.2918)
-Bench.create!(description: 'Lands End', lat: 37.4710, lng: 122.3020)
-Bench.create!(description: 'Presidio', lat: 37.4812, lng: 122.274637)
-Bench.create!(description: 'Fort Mason', lat: 37.4824, lng: 122.2536)
+Bench.create!(description: 'Golden Gate Park', lat:  37.769734, lng: -122.489770)
+Bench.create!(description: 'Lands End', lat: 37.781013, lng: -122.514145)
+Bench.create!(description: 'Presidio', lat: 37.809330, lng: -122.469835)
+Bench.create!(description: 'Fort Mason', lat: 37.810618, lng: -122.424431)

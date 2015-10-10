@@ -1,5 +1,13 @@
 window.Map = React.createClass({
+  getInitialState: function () {
+    return {markers: []};
+  },
+
   _onChange: function () {
+    this.state.markers.forEach(function (marker) {
+      marker.setMap(null);
+    });
+
     var _markers = [];
     var image = 'http://www.finbin.fi/WebRoot/vilkasfi02/Shops/2015061005/55FE/51B9/15A5/B733/1E20/0A28/1010/4F5F/lehtovuori-finbin_forma-bench_11_xs.jpg';
 
@@ -9,9 +17,11 @@ window.Map = React.createClass({
         map: this.map,
         title: bench.description,
         icon: image
-        // animation: google.maps.Animation.DROP
+        //animation: google.maps.Animation.DROP
       });
+
       _markers.push(marker);
+      this.setState({markers: _markers});
     }.bind(this));
   },
 

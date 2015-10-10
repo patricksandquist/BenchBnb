@@ -2,12 +2,14 @@ window.Map = React.createClass({
   _onChange: function () {
     var _markers = [];
     var image = 'http://www.finbin.fi/WebRoot/vilkasfi02/Shops/2015061005/55FE/51B9/15A5/B733/1E20/0A28/1010/4F5F/lehtovuori-finbin_forma-bench_11_xs.jpg';
+
     BenchStore.all().forEach(function (bench) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(bench.lat, bench.lng),
         map: this.map,
         title: bench.description,
         icon: image
+        // animation: google.maps.Animation.DROP
       });
       _markers.push(marker);
     }.bind(this));
@@ -23,8 +25,20 @@ window.Map = React.createClass({
     BenchStore.addChangeListener(this._onChange);
     this.map = new google.maps.Map(map, mapOptions);
     this.map.addListener('idle', function () {
-      ApiUtil.fetchBenches();
-    });
+      var LatLngBounds = this.map.getBounds();
+      var bounds = {
+        "northEast": {
+          "lat": LatLngBounds.getNorthEast().lat(),
+          "lng": LatLngBounds.getNorthEast().lng()
+        },
+        "southWest": {
+          "lat": LatLngBounds.getSouthWest().lat(),
+          "lng": LatLngBounds.getSouthWest().lng()
+        }
+      };
+
+      ApiUtil.fetchBenches(bounds);
+    }.bind(this));
   },
 
   render: function () {

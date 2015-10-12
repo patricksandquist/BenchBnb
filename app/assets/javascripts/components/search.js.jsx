@@ -1,13 +1,12 @@
-/* global ApiUtil, FilterParamsStore, React, Map, BenchesIndex, BenchStore */
+/* global ApiUtil, FilterParamsStore, React, Map, BenchesIndex, BenchStore, FilterParams */
 
 window.Search = React.createClass({
   getInitialState: function () {
-    return {bounds: {}, minSeating: 0, maxSeating: 999};
+    return {bounds: {}, minSeating: 0, maxSeating: 10};
   },
 
   _onChange: function () {
     var paramsArray = FilterParamsStore.getParams();
-
     this.setState({
       bounds: paramsArray[0],
       minSeating: paramsArray[1],
@@ -29,6 +28,7 @@ window.Search = React.createClass({
     return (
       <div>
         <Map clickFunction={this.handleMapClick}/>
+        <FilterParams minSeats={this.state.minSeating} maxSeats={this.state.maxSeating}/>
         <BenchesIndex benches={BenchStore.all()}/>
       </div>
     );

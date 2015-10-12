@@ -11,6 +11,7 @@ $(function () {
       return (
           <div>
             <header><h1>Bench BnB</h1></header>
+            <p>Click anywhere on the map to create a new bench!</p>
             {this.props.children}
           </div>
       );
@@ -20,7 +21,7 @@ $(function () {
   var routes = (
       <Route path='/' component={App}>
         <IndexRoute component={Search}/>
-        <Route path='bench/new' component={BenchForm}/>
+        <Route path='benches/new' component={BenchForm}/>
       </Route>
   );
 

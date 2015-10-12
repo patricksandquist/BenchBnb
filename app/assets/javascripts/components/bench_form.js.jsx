@@ -11,16 +11,19 @@ window.BenchForm = React.createClass({
     };
 
     ApiUtil.createBench(inputBench);
+    this.props.history.pushState(null, "/");
   },
 
   render: function () {
+    var clickLat = parseFloat(this.props.location.query.J);
+    var clickLng = parseFloat(this.props.location.query.M);
     return (
       <div>
         <h2>Add a bench!</h2>
         <form action="" onSubmit={this.handleSubmit}>
           Description: <input id='description' type='text'/><br></br>
-          Latitude:    <input id='latitude' type='number' step='0.001'/><br></br>
-          Longitude:   <input id='longitude' type='number' step='0.001'/><br></br>
+          Latitude:    <input id='latitude' type='number' step='0.001' value={clickLat}/><br></br>
+          Longitude:   <input id='longitude' type='number' step='0.001' value={clickLng}/><br></br>
           Seating:     <input id='seating' type='number' step='1'/><br></br>
           <input type='submit' value='Add bench'/>
       </form>

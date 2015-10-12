@@ -1,11 +1,12 @@
-/* global ApiActions */
+/* global ApiActions, FilterParamsStore */
 
 window.ApiUtil = {
-  fetchBenches: function (bounds) {
+  fetchBenches: function () {
+    var paramsArray = FilterParamsStore.getParams();
     $.ajax({
       url: 'api/benches',
       type: 'get',
-      data: {bounds: bounds},
+      data: {bounds: paramsArray[0]},
       success: function (benches) {
         ApiActions.receiveBenches(benches);
       }

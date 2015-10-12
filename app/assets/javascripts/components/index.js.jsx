@@ -1,3 +1,5 @@
+/* global React, BenchStore */
+
 window.BenchesIndex = React.createClass({
   _onChange: function () {
     // debugger;
@@ -21,11 +23,11 @@ window.BenchesIndex = React.createClass({
   render: function () {
     if (this.state.benches.length !== 0) {
       return (
-        <ul>
+        <ol>
           {this.state.benches.map(function (bench) {
-            return <li key={bench.id}>{bench}</li>;
+            return <li key={bench.id}>{bench.description}</li>;
           })}
-        </ul>
+        </ol>
       );
     } else {
       return <ul className="no-benches"></ul>;

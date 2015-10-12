@@ -6,7 +6,11 @@ window.ApiUtil = {
     $.ajax({
       url: 'api/benches',
       type: 'get',
-      data: {bounds: paramsArray[0]},
+      data: {
+        bounds: paramsArray[0],
+        minSeats: paramsArray[1],
+        maxSeats: paramsArray[2]
+      },
       success: function (benches) {
         ApiActions.receiveBenches(benches);
       }

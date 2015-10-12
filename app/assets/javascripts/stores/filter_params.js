@@ -15,7 +15,6 @@
 
   root.FilterParamsStore = $.extend({}, EventEmitter.prototype, {
     getParams: function () {
-      console.log("Getting params!");
       return [
         filterParams.bounds,
         filterParams.minSeating,

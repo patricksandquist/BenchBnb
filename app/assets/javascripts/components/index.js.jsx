@@ -23,7 +23,7 @@ window.BenchesIndex = React.createClass({
       return (
         <ol>
           {this.state.benches.map(function (bench) {
-            return <li key={bench.id}>{bench.description}</li>;
+            return <li key={bench.id}>{bench.description} [{bench.seating}]</li>;
           })}
         </ol>
       );

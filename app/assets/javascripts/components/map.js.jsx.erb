@@ -35,6 +35,7 @@ window.Map = React.createClass({
     };
 
     BenchStore.addChangeListener(this._onChange);
+
     this.map = new google.maps.Map(map, mapOptions);
     this.map.addListener('idle', function () {
       var LatLngBounds = this.map.getBounds();
@@ -50,6 +51,10 @@ window.Map = React.createClass({
       };
 
       ApiUtil.fetchBenches(bounds);
+    }.bind(this));
+
+    this.map.addListener('click', function (e) {
+      this.props.clickFunction(e.latLng);
     }.bind(this));
   },
 

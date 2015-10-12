@@ -1,4 +1,4 @@
-/* global React, BenchStore, google, ApiUtil */
+/* global FilterParamsActions, React, BenchStore, google, ApiUtil */
 
 window.Map = React.createClass({
   getInitialState: function () {
@@ -19,7 +19,6 @@ window.Map = React.createClass({
         map: this.map,
         title: bench.description,
         icon: image
-        // animation: google.maps.Animation.DROP
       });
 
       _markers.push(marker);
@@ -50,7 +49,7 @@ window.Map = React.createClass({
         }
       };
 
-      ApiUtil.fetchBenches(bounds);
+      FilterParamsActions.receiveBounds(bounds);
     }.bind(this));
 
     this.map.addListener('click', function (e) {

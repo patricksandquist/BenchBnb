@@ -1,4 +1,4 @@
-/* global ReactRouter, React, Search */
+/* global ReactRouter, React, Search, BenchForm */
 
 $(function () {
   var root = document.getElementById('content');
@@ -20,6 +20,7 @@ $(function () {
   var routes = (
       <Route path='/' component={App}>
         <IndexRoute component={Search}/>
+        <Route path='bench/new' component={BenchForm}/>
       </Route>
   );
 

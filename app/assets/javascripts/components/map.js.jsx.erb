@@ -1,3 +1,5 @@
+/* global React, BenchStore, google, ApiUtil */
+
 window.Map = React.createClass({
   getInitialState: function () {
     return {markers: []};
@@ -49,6 +51,10 @@ window.Map = React.createClass({
 
       ApiUtil.fetchBenches(bounds);
     }.bind(this));
+  },
+
+  componentWillUnmount: function () {
+    BenchStore.removeChangeListener(this._onChange);
   },
 
   render: function () {

@@ -2,7 +2,6 @@
 
 window.BenchesIndex = React.createClass({
   _onChange: function () {
-    // debugger;
     this.setState({ benches: BenchStore.all() });
   },
 
@@ -13,7 +12,6 @@ window.BenchesIndex = React.createClass({
   componentDidMount: function () {
     // Add a listener and grab the benches
     BenchStore.addChangeListener(this._onChange);
-    // ApiUtil.fetchBenches();
   },
 
   componentWillUnmount: function () {

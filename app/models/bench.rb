@@ -8,7 +8,9 @@
 #  lng         :float            not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  seating     :integer
 #
+
 require 'json'
 
 class Bench < ActiveRecord::Base

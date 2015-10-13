@@ -1,5 +1,4 @@
 /* global React, BenchStore */
-
 window.BenchesIndex = React.createClass({
   _onChange: function () {
     this.setState({ benches: BenchStore.all() });
@@ -23,8 +22,8 @@ window.BenchesIndex = React.createClass({
       return (
         <ol>
           {this.state.benches.map(function (bench) {
-            return <li key={bench.id}>{bench.description} [{bench.seating}]</li>;
-          })}
+            return <li key={bench.id} id={bench.id} onClick={this.props.clickFunction}>{bench.description} [{bench.seating}]</li>;
+          }.bind(this))}
         </ol>
       );
     } else {

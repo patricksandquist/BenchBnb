@@ -24,12 +24,17 @@ window.Search = React.createClass({
     this.props.history.pushState(null, "benches/new", coords);
   },
 
+  handleListClick: function (e) {
+    var id = {id: parseInt(e.target.parentElement.id)};
+    this.props.history.pushState(null, "bench/show", id);
+  },
+
   render: function () {
     return (
       <div>
         <Map clickFunction={this.handleMapClick}/>
         <FilterParams minSeats={this.state.minSeating} maxSeats={this.state.maxSeating}/>
-        <BenchesIndex benches={BenchStore.all()}/>
+        <BenchesIndex clickFunction={this.handleListClick} benches={BenchStore.all()}/>
       </div>
     );
   }

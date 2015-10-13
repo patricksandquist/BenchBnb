@@ -17,6 +17,11 @@ class Api::BenchesController < ApplicationController
     end
   end
 
+  def show
+    @bench = Bench.find_by_id(params[:bench_id])
+    render json: @bench
+  end
+
   private
 
   def bench_params

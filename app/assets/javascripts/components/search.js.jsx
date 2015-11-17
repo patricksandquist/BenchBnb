@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-window.Search = React.createClass({
-  render: function () {
-    return (
-      <div>
-        <Map/>
-=======
 /* global ApiUtil, FilterParamsStore, React, Map, BenchesIndex, BenchStore, FilterParams */
 
 window.Search = React.createClass({
@@ -36,7 +29,6 @@ window.Search = React.createClass({
       <div>
         <Map clickFunction={this.handleMapClick}/>
         <FilterParams minSeats={this.state.minSeating} maxSeats={this.state.maxSeating}/>
->>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
         <BenchesIndex benches={BenchStore.all()}/>
       </div>
     );

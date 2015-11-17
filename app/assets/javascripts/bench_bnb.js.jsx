@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-$(function () {
-  React.render(
-    <Search/>,
-    document.getElementById('content')
-  );
-=======
 /* global ReactRouter, React, Search, BenchForm */
 
 $(function () {
@@ -33,5 +26,4 @@ $(function () {
   );
 
   React.render(<Router>{routes}</Router>, root);
->>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
 });

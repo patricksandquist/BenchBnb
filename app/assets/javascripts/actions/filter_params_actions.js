@@ -1,5 +1,3 @@
-/* global AppDispatcher, BenchConstants */
-
 window.FilterParamsActions = {
   receiveBounds: function (bounds) {
     AppDispatcher.dispatch({

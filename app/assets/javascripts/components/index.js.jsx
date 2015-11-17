@@ -1,5 +1,3 @@
-/* global React, BenchStore */
-
 window.BenchesIndex = React.createClass({
   _onChange: function () {
     this.setState({ benches: BenchStore.all() });

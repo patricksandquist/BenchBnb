@@ -1,5 +1,3 @@
-/* global AppDispatcher, BenchConstants */
-
 window.ApiActions = {
   receiveBenches: function (benches) {
     AppDispatcher.dispatch({

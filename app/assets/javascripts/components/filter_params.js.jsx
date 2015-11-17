@@ -1,5 +1,3 @@
-/* global ApiUtil, React, FilterParamsActions */
-
 window.FilterParams = React.createClass({
   _onChange: function (e) {
     if (e.target.name === "minSeats") {

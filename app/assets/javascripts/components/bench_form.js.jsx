@@ -1,5 +1,3 @@
-/* global React, ApiUtil */
-
 window.BenchForm = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
@@ -15,8 +13,8 @@ window.BenchForm = React.createClass({
   },
 
   render: function () {
-    var clickLat = parseFloat(this.props.location.query.J);
-    var clickLng = parseFloat(this.props.location.query.M);
+    var clickLat = parseFloat(this.props.location.query.lat);
+    var clickLng = parseFloat(this.props.location.query.lng);
     return (
       <div>
         <h2>Add a bench!</h2>

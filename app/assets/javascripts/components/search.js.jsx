@@ -1,5 +1,3 @@
-/* global ApiUtil, FilterParamsStore, React, Map, BenchesIndex, BenchStore, FilterParams */
-
 window.Search = React.createClass({
   getInitialState: function () {
     return {bounds: {}, minSeating: 0, maxSeating: 10};
@@ -20,7 +18,8 @@ window.Search = React.createClass({
     FilterParamsStore.addChangeListener(this._onChange);
   },
 
-  handleMapClick: function (coords) {
+  handleMapClick: function (latlng) {
+    var coords = {lat: latlng.lat(), lng: latlng.lng()};
     this.props.history.pushState(null, "benches/new", coords);
   },
 

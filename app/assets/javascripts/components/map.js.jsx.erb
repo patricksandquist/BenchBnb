@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+/* global FilterParamsActions, React, BenchStore, google, ApiUtil */
+
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
 window.Map = React.createClass({
   getInitialState: function () {
     return {markers: []};
@@ -17,7 +22,10 @@ window.Map = React.createClass({
         map: this.map,
         title: bench.description,
         icon: image
+<<<<<<< HEAD
         // animation: google.maps.Animation.DROP
+=======
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
       });
 
       _markers.push(marker);
@@ -33,6 +41,10 @@ window.Map = React.createClass({
     };
 
     BenchStore.addChangeListener(this._onChange);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
     this.map = new google.maps.Map(map, mapOptions);
     this.map.addListener('idle', function () {
       var LatLngBounds = this.map.getBounds();
@@ -47,10 +59,25 @@ window.Map = React.createClass({
         }
       };
 
+<<<<<<< HEAD
       ApiUtil.fetchBenches(bounds);
     }.bind(this));
   },
 
+=======
+      FilterParamsActions.receiveBounds(bounds);
+    }.bind(this));
+
+    this.map.addListener('click', function (e) {
+      this.props.clickFunction(e.latLng);
+    }.bind(this));
+  },
+
+  componentWillUnmount: function () {
+    BenchStore.removeChangeListener(this._onChange);
+  },
+
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
   render: function () {
     return <div className='map' ref='map'></div>;
   }

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+/* global EventEmitter, AppDispatcher, BenchConstants, BenchStore */
+
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
 (function(root){
   var _benches = [], CHANGE_EVENT = 'change';
 
@@ -5,6 +10,13 @@
     _benches = benches;
   };
 
+<<<<<<< HEAD
+=======
+  var addBench = function (bench) {
+    _benches.push(bench);
+  };
+
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
   root.BenchStore = $.extend({}, EventEmitter.prototype, {
     all: function(){
       return _benches.slice(0);
@@ -28,6 +40,13 @@
           resetBenches(payload.benches);
           BenchStore.emit(CHANGE_EVENT);
           break;
+<<<<<<< HEAD
+=======
+        case BenchConstants.BENCH_ADDED:
+          addBench(payload.bench);
+          BenchStore.emit(CHANGE_EVENT);
+          break;
+>>>>>>> 78378beb0b0fb842a069bf038ea60d53fc094357
       }
     })
   });

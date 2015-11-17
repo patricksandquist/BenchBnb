@@ -9,14 +9,14 @@ window.Map = React.createClass({
     });
 
     var _markers = [];
-    var image = 'http://www.finbin.fi/WebRoot/vilkasfi02/Shops/2015061005/55FE/51B9/15A5/B733/1E20/0A28/1010/4F5F/lehtovuori-finbin_forma-bench_11_xs.jpg';
+    // var image = 'http://www.finbin.fi/WebRoot/vilkasfi02/Shops/2015061005/55FE/51B9/15A5/B733/1E20/0A28/1010/4F5F/lehtovuori-finbin_forma-bench_11_xs.jpg';
 
     BenchStore.all().forEach(function (bench) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(bench.lat, bench.lng),
         map: this.map,
-        title: bench.description,
-        icon: image
+        title: bench.description
+        // icon: image
       });
 
       _markers.push(marker);

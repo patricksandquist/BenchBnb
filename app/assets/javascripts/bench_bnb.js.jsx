@@ -1,5 +1,3 @@
-/* global ReactRouter, React, Search, BenchForm */
-
 $(function () {
   var root = document.getElementById('content');
   var Route = ReactRouter.Route;
@@ -10,7 +8,7 @@ $(function () {
     render: function(){
       return (
           <div>
-            <header><h1>Bench BnB</h1></header>
+            <header><h1>BenchBook</h1></header>
             <p>Click anywhere on the map to create a new bench!</p>
             {this.props.children}
           </div>

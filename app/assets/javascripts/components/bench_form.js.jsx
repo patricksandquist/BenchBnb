@@ -12,6 +12,10 @@ window.BenchForm = React.createClass({
     this.props.history.pushState(null, "/");
   },
 
+  handleCancel: function (e) {
+    this.props.history.pushState(null, "/");
+  },
+
   render: function () {
     var clickLat = parseFloat(this.props.location.query.lat);
     var clickLng = parseFloat(this.props.location.query.lng);
@@ -24,7 +28,8 @@ window.BenchForm = React.createClass({
           Longitude:   <input id='longitude' type='number' step='0.001' value={clickLng}/><br></br>
           Seating:     <input id='seating' type='number' step='1'/><br></br>
           <input type='submit' value='Add bench'/>
-      </form>
+        </form>
+        <input type='submit' onClick={this.handleCancel} value='Back'/>
       </div>
     );
   }

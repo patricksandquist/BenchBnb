@@ -1,6 +1,6 @@
 # BenchBook
 [Live site][liveLink]
-[liveLink]: benchbook.herokuapp.com
+[liveLink]: http://benchbook.herokuapp.com/
 
 BenchBook is a simple tool for keeping track of benches all around the world.
 

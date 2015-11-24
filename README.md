@@ -2,7 +2,7 @@
 [Live site][liveLink]
 [liveLink]: http://benchbook.herokuapp.com/
 
-BenchBook is a simple tool for keeping track of benches all around the world.
+BenchBook is a simple tool for keeping track of benches around the world.
 
 ### Features
 - Users may explore benches and their location on the map

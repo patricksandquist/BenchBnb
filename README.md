@@ -18,3 +18,6 @@ BenchBook is a simple tool for keeping track of benches around the world.
 ### Todo
 - Add BenchShow component where reviews can be written
 - Filter benches by review score
+
+### License
+BenchBook is released under the [MIT License](http://www.opensource.org/licenses/MIT).
